@@ -1,30 +1,8 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
-
-class Post
-{
-    public static function all()
-    {
-        return [
-            [
-                'id' => 1,
-                'slug' => 'judul-artikel-1',
-                'title' => 'Judul Artikel 1',
-                'author' => 'Alfian',
-                'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod perspiciiatis nihil, eligendi delectus ut doloremque excepturi ad numquam quae odit nisi neque molestiae ipsum assumenda, explicabo sit maiores facere voluptatum?',
-            ],
-            [
-                'id' => 2,
-                'slug' => 'judul-artikel-2',
-                'title' => 'Judul Artikel 2',
-                'author' => 'Alfian',
-                'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, consectetur nisi debitis quasi rerum numquam necessitatibus! Recusandae libero enim natus? Voluptates officia officiis dolorem quasi, placeat voluptatum unde numquam rerum.',
-            ]
-        ];
-    }
-}
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
