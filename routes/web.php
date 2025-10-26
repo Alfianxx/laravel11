@@ -16,11 +16,9 @@ Route::get('posts', function () {
     return view('posts', ['title' => 'Blog Page', 'posts' => Post::all()]);
 });
 
-Route::get('/posts/{slug}', function ($slug) {
+Route::get('/posts/{id}', function ($id) {
 
-    $post = Arr::first(Post::all(), function ($posts) use ($slug) {
-        return $posts['slug'] == $slug;
-    });
+    $post = Post::find($id);
 
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
